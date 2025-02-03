@@ -1,7 +1,7 @@
 name: My first action
 on: push
 jobs:
-  my-job:
+  my-first-action:
     runs-on: ubuntu-latest
     steps:
       - name: my-step
