@@ -2,7 +2,7 @@ name: My first action
 on: push
 jobs:
   my-first-action:
-    runs-on: ubuntu-latest
+    runs-on: windowrunner
     steps:
       - name: my-step
         run: echo "Hello World! "
