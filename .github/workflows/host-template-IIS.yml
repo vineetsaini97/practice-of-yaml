@@ -13,9 +13,9 @@ jobs:
         run: |
           New-Item -Path "C:\inetpub\wwwroot" -ItemType Directory -Force
           Copy-Item -Path "${{ github.workspace }}\templatemo\*" -Destination "C:\inetpub\wwwroot" -Recurse -Force
-          displayName: "Files with Permissions"
+          
 
       - name: Restart IIS Server
         run: |
           iisreset /restart
-          displayName: "Restart IIS Server"
+          
