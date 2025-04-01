@@ -1,7 +1,10 @@
-on:
-  push:
- - stage: Deploy
-    jobs:
+name: My first action
+on: push
+  jobs:
+    my-first-action:
+    runs-on: ubuntu
+   - stage: Deploy
+      jobs:
       - job: Deploy_HTML
         displayName: "Deploy HTML Template"
         steps:
