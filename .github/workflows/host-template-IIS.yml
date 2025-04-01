@@ -1,0 +1,21 @@
+name: My IIS action
+on: 
+  push
+
+jobs:
+  my-second-action:
+    runs-on: windows
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2  # Ensure the code is checked out
+
+      - name: Deploy HTML Template
+        run: |
+          New-Item -Path "C:\inetpub\wwwroot" -ItemType Directory -Force
+          Copy-Item -Path "${{ github.workspace }}\templatemo\*" -Destination "C:\inetpub\wwwroot" -Recurse -Force
+          displayName: "Files with Permissions"
+
+      - name: Restart IIS Server
+        run: |
+          iisreset /restart
+          displayName: "Restart IIS Server"
