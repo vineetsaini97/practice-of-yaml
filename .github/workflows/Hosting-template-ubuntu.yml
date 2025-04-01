@@ -3,7 +3,7 @@ on:
   push
 jobs:
   my-first-action:
-    runs-on: ubuntu
+    runs-on: linux
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
@@ -11,7 +11,7 @@ jobs:
       - name: Set permissions and copy files
         run: |
           sudo chmod -R 777 /var/www/html  # Grant full access (adjust for security)
-          sudo cp -rf $GITHUB_WORKSPACE/templatemo_580_woox_travel/* /var/www/html/
+          sudo cp -rf $GITHUB_WORKSPACE/templatemo/* /var/www/html/
 
       - name: Restart Nginx
         run: sudo systemctl restart nginx
