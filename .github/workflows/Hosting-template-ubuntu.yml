@@ -1,0 +1,18 @@
+name: My first action
+on: push
+  jobs:
+    my-first-action:
+    runs-on: ubuntu
+   - stage: Deploy
+      jobs:
+      - job: Deploy_HTML
+        displayName: "Deploy HTML Template"
+        steps:
+          - script: |
+              sudo chmod -R 777 /var/www/html  # Grant full access (adjust for security)
+              sudo cp -rf $(Build.SourcesDirectory)/templatemo_580_woox_travel/* /var/www/html/
+            displayName: "Copy Files with Permissions"
+
+          - script: |
+              sudo systemctl restart nginx
+            displayName: "Restart Nginx"
