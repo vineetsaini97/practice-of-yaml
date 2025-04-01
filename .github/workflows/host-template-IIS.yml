@@ -7,7 +7,7 @@ jobs:
     runs-on: windows
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2  # Ensure the code is checked out
+        uses: actions/checkout@v2  # Ensure the code is checked 
 
       - name: Set PowerShell Execution Policy
         run: |
