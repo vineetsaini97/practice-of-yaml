@@ -9,6 +9,12 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2  # Ensure the code is checked out
 
+      - name: Set PowerShell Execution Policy
+        run: |
+          Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process -Force
+          displayName: "Set PowerShell Execution Policy"
+
+
       - name: Deploy HTML Template
         run: |
           New-Item -Path "C:\inetpub\wwwroot" -ItemType Directory -Force
