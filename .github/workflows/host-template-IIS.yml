@@ -1,7 +1,7 @@
 name: My IIS action
 on: 
   push
-
+            
 jobs:
   my-second-action:
     runs-on: windows
